@@ -2,16 +2,17 @@
 import React from 'react';
 import Image from 'next/image';
 import GetQuoteButton from '../components/GetQuoteButton';
+import { img } from '../utils/basePath';
 
 const services = [
-  { id: 1, title: 'Customized Tour Packages', description: 'Tailor-made packages to suit your travel needs.', image: '/images/services/tour.jpg' },
-  { id: 2, title: 'Luxury Hotel Bookings', description: 'Best accommodations at the best prices.', image: '/images/services/luxury.jpg' },
-  { id: 3, title: 'Local Guided Tours', description: 'Discover hidden gems with our local guides.', image: '/images/services/guide.jpg' },
-  { id: 4, title: 'Adventure Activities', description: 'Trekking, water sports, and more thrilling adventures.', image: '/images/services/adventure.jpg' },
-  { id: 5, title: 'Transportation Services', description: 'Safe and reliable transport between destinations.', image: '/images/services/transport.jpg' },
-  { id: 6, title: 'Travel Insurance', description: 'Comprehensive coverage for worry-free journeys.', image: '/images/services/insurance.webp' },
-  { id: 7, title: 'Visa Assistance', description: 'Expert visa processing and documentation.', image: '/images/services/visa.jpg' },
-  { id: 8, title: 'Destination Weddings', description: 'Turn your wedding dreams into reality.', image: '/images/services/weddings.jpg' },
+  { id: 1, title: 'Customized Tour Packages', description: 'Tailor-made packages to suit your travel needs.', image: img('/images/services/tour.jpg') },
+  { id: 2, title: 'Luxury Hotel Bookings', description: 'Best accommodations at the best prices.', image: img('/images/services/luxury.jpg') },
+  { id: 3, title: 'Local Guided Tours', description: 'Discover hidden gems with our local guides.', image: img('/images/services/guide.jpg') },
+  { id: 4, title: 'Adventure Activities', description: 'Trekking, water sports, and more thrilling adventures.', image: img('/images/services/adventure.jpg') },
+  { id: 5, title: 'Transportation Services', description: 'Safe and reliable transport between destinations.', image: img('/images/services/transport.jpg') },
+  { id: 6, title: 'Travel Insurance', description: 'Comprehensive coverage for worry-free journeys.', image: img('/images/services/insurance.webp') },
+  { id: 7, title: 'Visa Assistance', description: 'Expert visa processing and documentation.', image: img('/images/services/visa.jpg') },
+  { id: 8, title: 'Destination Weddings', description: 'Turn your wedding dreams into reality.', image: img('/images/services/weddings.jpg') },
 ];
 
 const Services = () => (

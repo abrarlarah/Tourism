@@ -4,43 +4,44 @@ import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import GetQuoteButton from '../components/GetQuoteButton';
 import { FaPhoneAlt } from 'react-icons/fa';
+import { img } from '../utils/basePath';
 
 // Defined OUTSIDE component — never re-created on each render
 const heroContent = [
   {
     title: "Explore Kashmir's Hidden Gems",
     description: 'From the serene waters of Dal Lake in Srinagar to the snow-covered peaks of Gulmarg, experience the untouched beauty of Kashmir like never before.',
-    image: '/images/kashmir.png',
+    image: img('/images/kashmir.png'),
     highlight: 'Gems',
   },
   {
     title: 'Adventure Awaits in Leh',
     description: 'Discover the rugged landscapes and ancient monasteries of Leh with our exclusive adventure packages.',
-    image: '/images/leh.png',
+    image: img('/images/leh.png'),
     highlight: 'Leh',
   },
   {
     title: 'Relax in the Meadows of Sonamarg',
     description: 'Unwind amidst the lush green meadows and pristine rivers of Sonamarg.',
-    image: '/images/sonamarg.png',
+    image: img('/images/sonamarg.png'),
     highlight: 'Sonamarg',
   },
   {
     title: 'Charming Beauty of Pahalgam',
     description: 'Escape to Pahalgam, where lush green meadows meet the tranquil Lidder River for a perfect getaway.',
-    image: '/images/pahalgam.png',
+    image: img('/images/pahalgam.png'),
     highlight: 'Pahalgam',
   },
   {
     title: 'Cultural Wonders of Srinagar',
     description: 'Immerse yourself in the rich cultural heritage of Srinagar with its Mughal Gardens and houseboats on Dal Lake.',
-    image: '/images/srinagar.png',
+    image: img('/images/srinagar.png'),
     highlight: 'Srinagar',
   },
   {
     title: 'Thrills in Gulmarg',
     description: 'Enjoy skiing, snowboarding, and the breathtaking beauty of Gulmarg, the winter sports paradise of India.',
-    image: '/images/gulmarg.png',
+    image: img('/images/gulmarg.png'),
     highlight: 'Gulmarg',
   },
 ];

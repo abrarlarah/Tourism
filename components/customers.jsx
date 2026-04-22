@@ -3,14 +3,15 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { img } from '../utils/basePath';
 
 // Outside component — stable
 const customers = [
-  { id: 1, name: 'Alice Johnson', image: '/images/05.jpg', testimonial: 'A wonderful trip, everything was perfectly planned!' },
-  { id: 2, name: 'David Lee',     image: '/images/06.jpg', testimonial: 'A journey I will never forget, highly recommended!' },
-  { id: 3, name: 'Emily Clark',   image: '/images/07.jpg', testimonial: 'Excellent service and beautiful destinations!' },
-  { id: 4, name: 'Michael Brown', image: '/images/08.jpg', testimonial: 'Amazing experience, will definitely book again!' },
-  { id: 5, name: 'Sophia White',  image: '/images/05.jpg', testimonial: 'A seamless travel experience with fantastic guides.' },
+  { id: 1, name: 'Alice Johnson', image: img('/images/05.jpg'), testimonial: 'A wonderful trip, everything was perfectly planned!' },
+  { id: 2, name: 'David Lee',     image: img('/images/06.jpg'), testimonial: 'A journey I will never forget, highly recommended!' },
+  { id: 3, name: 'Emily Clark',   image: img('/images/07.jpg'), testimonial: 'Excellent service and beautiful destinations!' },
+  { id: 4, name: 'Michael Brown', image: img('/images/08.jpg'), testimonial: 'Amazing experience, will definitely book again!' },
+  { id: 5, name: 'Sophia White',  image: img('/images/05.jpg'), testimonial: 'A seamless travel experience with fantastic guides.' },
 ];
 
 const Customers = () => (

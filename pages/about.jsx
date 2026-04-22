@@ -2,16 +2,17 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { img } from '../utils/basePath';
 
 const teamMembers = [
-  { id: 1, name: 'Abrar', role: 'Founder & CEO', image: '/images/team/t1.jpg' },
+  { id: 1, name: 'Abrar', role: 'Founder & CEO', image: img('/images/team/t1.jpg') },
 ];
 
 const About = () => (
   <div className="mt-20">
     {/* Hero */}
     <div className="relative h-[60vh] w-full overflow-hidden">
-      <Image src="/images/about.avif" alt="Kashmir landscape" fill className="object-cover brightness-75" priority />
+      <Image src={img("/images/about.avif")} alt="Kashmir landscape" fill className="object-cover brightness-75" priority />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 drop-shadow-lg animate-fade-in font-montserrat uppercase">
           About Kashmir Venture
@@ -31,7 +32,7 @@ const About = () => (
           <p>From the snow-capped peaks of Gulmarg to the serene waters of Dal Lake, our expert team curates every journey with care — ensuring comfort, safety, and unforgettable moments.</p>
         </div>
         <div className="rounded-lg overflow-hidden shadow-lg relative h-80">
-          <Image src="/images/about.avif" alt="Our journey through Kashmir" fill className="object-cover" loading="lazy" />
+          <Image src={img("/images/about.avif")} alt="Our journey through Kashmir" fill className="object-cover" loading="lazy" />
         </div>
       </div>
     </div>

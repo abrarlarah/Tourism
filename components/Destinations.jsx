@@ -4,15 +4,16 @@
 import React, { useCallback } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { img } from '../utils/basePath';
 
 // Outside component — never re-created on render
 const destinations = [
-  { id: 1, name: 'Srinagar',  image: '/images/srinagar.png',  description: 'Experience the serene Dal Lake and Mughal Gardens.' },
-  { id: 2, name: 'Gulmarg',   image: '/images/gulmarg.png',   description: 'A paradise for skiers and nature lovers.' },
-  { id: 3, name: 'Sonamarg',  image: '/images/sonamarg.png',  description: 'The Meadow of Gold, perfect for trekking.' },
-  { id: 4, name: 'Pahalgam',  image: '/images/pahalgam.png',  description: 'Lush green meadows and the tranquil Lidder River.' },
-  { id: 5, name: 'Leh',       image: '/images/leh.png',       description: 'Explore the rugged landscapes and monasteries of Leh.' },
-  { id: 6, name: 'Yousmarg',  image: '/images/yousmarg.png',  description: 'A hidden gem, ideal for a peaceful nature retreat.' },
+  { id: 1, name: 'Srinagar',  image: img('/images/srinagar.png'),  description: 'Experience the serene Dal Lake and Mughal Gardens.' },
+  { id: 2, name: 'Gulmarg',   image: img('/images/gulmarg.png'),   description: 'A paradise for skiers and nature lovers.' },
+  { id: 3, name: 'Sonamarg',  image: img('/images/sonamarg.png'),  description: 'The Meadow of Gold, perfect for trekking.' },
+  { id: 4, name: 'Pahalgam',  image: img('/images/pahalgam.png'),  description: 'Lush green meadows and the tranquil Lidder River.' },
+  { id: 5, name: 'Leh',       image: img('/images/leh.png'),       description: 'Explore the rugged landscapes and monasteries of Leh.' },
+  { id: 6, name: 'Yousmarg',  image: img('/images/yousmarg.png'),  description: 'A hidden gem, ideal for a peaceful nature retreat.' },
 ];
 
 const Destinations = () => {

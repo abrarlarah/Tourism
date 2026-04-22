@@ -5,6 +5,7 @@ import AdminLayout from '../../components/AdminLayout';
 import Modals from '../../components/Modals';
 // import { supabase } from '../../utlis/supabaseClient';
 import Image from 'next/image';
+import { img } from '../../utils/basePath';
 
 
 const Packages = () => {
@@ -20,9 +21,9 @@ const Packages = () => {
     try {
       // Mock data for local development (bypass Supabase)
       const mockPackages = [
-        { id: 1, name: 'Kashmir Paradise', price: 25000, days: 7, image: '/images/kashmir.png' },
-        { id: 2, name: 'Ladakh Adventure', price: 35000, days: 10, image: '/images/ladakh.png' },
-        { id: 3, name: 'Gulmarg Ski Package', price: 30000, days: 5, image: '/images/gulmarg.png' }
+        { id: 1, name: 'Kashmir Paradise', price: 25000, days: 7, image: img('/images/kashmir.png') },
+        { id: 2, name: 'Ladakh Adventure', price: 35000, days: 10, image: img('/images/ladakh.png') },
+        { id: 3, name: 'Gulmarg Ski Package', price: 30000, days: 5, image: img('/images/gulmarg.png') }
       ];
       setPackages(mockPackages);
       
@@ -47,7 +48,7 @@ const Packages = () => {
         // Update existing package
         setPackages(prev => prev.map(pkg => 
           pkg.id === newPackage.id 
-            ? { ...newPackage, image: newPackage.image || '/images/kashmir.png' }
+            ? { ...newPackage, image: newPackage.image || img('/images/kashmir.png') }
             : pkg
         ));
       } else {
@@ -56,7 +57,7 @@ const Packages = () => {
         setPackages(prev => [...prev, {
           ...newPackage,
           id: newId,
-          image: newPackage.image || '/images/kashmir.png'
+          image: newPackage.image || img('/images/kashmir.png')
         }]);
       }
 

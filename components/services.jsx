@@ -2,6 +2,7 @@
 import React, { useCallback } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { img } from '../utils/basePath';
 
 // Outside component — stable
 const services = [
@@ -9,25 +10,25 @@ const services = [
     id: 1,
     title: 'Custom Tour Packages',
     description: 'We offer tailor-made tour packages to suit your preferences and budget, ensuring a memorable travel experience.',
-    image: '/images/hero.png',
+    image: img('/images/hero.png'),
   },
   {
     id: 2,
     title: 'Luxury Travel',
     description: 'Enjoy the best in class amenities with our luxury travel packages. From private transfers to 5-star accommodations, we have it all.',
-    image: '/images/lux.jpg',
+    image: img('/images/lux.jpg'),
   },
   {
     id: 3,
     title: 'Adventure Tours',
     description: 'For thrill-seekers, our adventure tours include trekking, river rafting, and more. Discover new horizons with us.',
-    image: '/images/advs.jpg',
+    image: img('/images/advs.jpg'),
   },
   {
     id: 4,
     title: 'Group Tours',
     description: 'Travel with your friends, family, or colleagues. We arrange group tours with special discounts and customized itineraries.',
-    image: '/images/123.jpg',
+    image: img('/images/123.jpg'),
   },
 ];
 

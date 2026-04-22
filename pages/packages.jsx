@@ -2,17 +2,18 @@
 import React from 'react';
 import Image from 'next/image';
 import GetQuoteButton from '../components/GetQuoteButton';
+import { img } from '../utils/basePath';
 
 const packages = [
-  { id: 1, name: 'Splendid Ladakh',        image: '/images/ladakh.png',      price: '$2000', days: '7 days' },
-  { id: 2, name: 'Kashmir Heaven on Earth', image: '/images/kashmir.png',     price: '$1800', days: '5 days' },
-  { id: 3, name: 'Srinagar',               image: '/images/srinagar.png',    price: '$2200', days: '6 days' },
-  { id: 4, name: 'Yusmarg',                image: '/images/yousmarg.png',    price: '$2100', days: '5 days' },
-  { id: 5, name: 'Sonamarg',               image: '/images/sonamarg.png',    price: '$2500', days: '8 days' },
-  { id: 6, name: 'Pahalgam',               image: '/images/pahalgam.png',    price: '$1500', days: '4 days' },
-  { id: 7, name: 'Gulmarg Winter Retreat',  image: '/images/gulmarg.png',     price: '$2400', days: '6 days' },
-  { id: 8, name: 'Leh Adventure',          image: '/images/leh.png',         price: '$3000', days: '10 days' },
-  { id: 9, name: 'Doodhpathri Escape',     image: '/images/doodhpathri.png', price: '$1600', days: '5 days' },
+  { id: 1, name: 'Splendid Ladakh',        image: img('/images/ladakh.png'),      price: '$2000', days: '7 days' },
+  { id: 2, name: 'Kashmir Heaven on Earth', image: img('/images/kashmir.png'),     price: '$1800', days: '5 days' },
+  { id: 3, name: 'Srinagar',               image: img('/images/srinagar.png'),    price: '$2200', days: '6 days' },
+  { id: 4, name: 'Yusmarg',                image: img('/images/yousmarg.png'),    price: '$2100', days: '5 days' },
+  { id: 5, name: 'Sonamarg',               image: img('/images/sonamarg.png'),    price: '$2500', days: '8 days' },
+  { id: 6, name: 'Pahalgam',               image: img('/images/pahalgam.png'),    price: '$1500', days: '4 days' },
+  { id: 7, name: 'Gulmarg Winter Retreat',  image: img('/images/gulmarg.png'),     price: '$2400', days: '6 days' },
+  { id: 8, name: 'Leh Adventure',          image: img('/images/leh.png'),         price: '$3000', days: '10 days' },
+  { id: 9, name: 'Doodhpathri Escape',     image: img('/images/doodhpathri.png'), price: '$1600', days: '5 days' },
 ];
 
 const Packages = () => (

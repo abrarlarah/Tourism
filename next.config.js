@@ -1,18 +1,24 @@
 const path = require('path');
 
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/Tourism' : '';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 
   // GitHub Pages static export
-  basePath: process.env.NODE_ENV === 'production' ? '/Tourism' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/Tourism' : '',
+  basePath,
+  assetPrefix: basePath,
   trailingSlash: true,
   output: 'export',
 
-  // Images: keep unoptimized ONLY because static export (output: 'export')
-  // doesn't support the built-in image optimisation server.
-  // All perf gains come from correct `sizes` + `loading` props in components.
+  // Expose basePath to client-side code via env
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+
+  // Images: unoptimized because output:'export' has no image server
   images: {
     unoptimized: true,
   },

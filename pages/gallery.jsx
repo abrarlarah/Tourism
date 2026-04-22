@@ -1,14 +1,15 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import { img } from '../utils/basePath';
 
 const photos = [
-  { id: 1, src: '/images/ladakh.png',   alt: 'Beautiful landscape of Ladakh' },
-  { id: 2, src: '/images/srinagar.png', alt: 'Scenic view of Dal Lake' },
-  { id: 3, src: '/images/kupwara.png',  alt: 'Sunset over the valleys' },
-  { id: 4, src: '/images/gulmarg.png',  alt: 'Snow-covered landscapes' },
-  { id: 5, src: '/images/footer.png',   alt: 'Mountain range view' },
-  { id: 6, src: '/images/pahalgam.png', alt: 'Beautiful scenery of Pahalgam' },
+  { id: 1, src: img('/images/ladakh.png'),   alt: 'Beautiful landscape of Ladakh' },
+  { id: 2, src: img('/images/srinagar.png'), alt: 'Scenic view of Dal Lake' },
+  { id: 3, src: img('/images/kupwara.png'),  alt: 'Sunset over the valleys' },
+  { id: 4, src: img('/images/gulmarg.png'),  alt: 'Snow-covered landscapes' },
+  { id: 5, src: img('/images/footer.png'),   alt: 'Mountain range view' },
+  { id: 6, src: img('/images/pahalgam.png'), alt: 'Beautiful scenery of Pahalgam' },
 ];
 
 const Gallery = () => (

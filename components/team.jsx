@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import { img } from '../utils/basePath';
 
 // Outside component — stable
 const teamMembers = [
@@ -8,7 +9,7 @@ const teamMembers = [
     id: 1,
     name: 'Abrar',
     role: 'Founder & CEO',
-    image: '/images/Abrar.png',
+    image: img('/images/Abrar.png'),
     tagline: 'Leading the way to success',
   },
 ];

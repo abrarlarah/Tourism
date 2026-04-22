@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { img } from '../utils/basePath';
 
 const SOCIAL_LINKS = [
   { href: 'https://facebook.com',  Icon: FaFacebookF,  label: 'Facebook'  },
@@ -34,7 +35,7 @@ const Footer = () => (
     {/* Background image */}
     <div className="absolute inset-0">
       <Image
-        src="/images/kashmir.png"
+        src={img("/images/kashmir.png")}
         alt="Kashmir landscape footer background"
         fill
         className="object-cover"
