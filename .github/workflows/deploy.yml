@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      env:
+        NODE_ENV: production
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-files
+        path: ./out
+        retention-days: 1
+        
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: build-files
+        path: ./out
+        
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git clone --single-branch --depth 1 https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git deploy
+        cd deploy
+        git switch --orphan gh-pages 2>/dev/null || git checkout --orphan gh-pages
+        git rm -rf .
+        cp -r ../out/* .
+        echo "/Tourism" > .nojekyll
+        git add .
+        git commit -m "Deploy $(date)"
+        git push origin gh-pages --force
