@@ -1,30 +1,21 @@
-"use client";
-
-// app/layout.jsx
-import React, { ReactNode } from 'react';
+// app/layout.tsx  — Server Component (no "use client")
+import type { ReactNode } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-// import { Montserrat } from '@next/font/google';
+import './globals.css';
 
+export const metadata = {
+  title: 'Kashmir Venture | Tour & Travel',
+  description: 'Discover the best travel destinations in Kashmir — Dal Lake, Gulmarg, Sonamarg, Pahalgam and more.',
+};
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-// const montserrat = Montserrat({
-//   subsets: ['latin'],
-//   weight: ['400', '700'],
-//   display: 'swap',
-// });
-
-
-
-const RootLayout: React.FC<LayoutProps> = ({ children }) => {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>Tour and Travel Website</title>
-        <meta name="description" content="Discover the best travel destinations around the world" />
+        {/* Preconnect to Google Fonts for faster font loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
         <Navbar transparent={false} />
@@ -33,6 +24,4 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

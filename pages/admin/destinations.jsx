@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import AdminLayout from '../../components/AdminLayout';
 import Modals from '../../components/Modals';
-import { supabase } from '../../utlis/supabaseClient';
+import { supabase } from '../../utils/supabaseClient';
 
 const Destinations = () => {
   const [destinations, setDestinations] = useState([]);

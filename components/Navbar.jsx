@@ -1,10 +1,24 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 
-const Navbar = ({ transparent }) => {
+// Defined outside component — stable reference, zero re-allocation
+const NAV_LINKS = [
+  { href: '/',            label: 'Home' },
+  { href: '/about',       label: 'About Us' },
+  { href: '/packages',    label: 'Packages' },
+  { href: '/destinations',label: 'Destinations' },
+  { href: '/services',    label: 'Services' },
+  { href: '/gallery',     label: 'Gallery' },
+  { href: '/contact',     label: 'Contact Us' },
+];
+
+const Navbar = ({ transparent = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+  const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
 
   return (
     <nav
@@ -13,36 +27,21 @@ const Navbar = ({ transparent }) => {
       } text-gray-800 transition-all duration-300 ease-in-out`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="text-lg font-bold text-yellow-500 transition-transform transform hover:scale-110">
+        {/* Logo */}
+        <Link href="/" className="text-lg font-bold text-yellow-500 transition-transform transform hover:scale-110">
           Kashmir Venture
-        </div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="nav-link hover:text-yellow-500 transition duration-300">
-            Home
-          </Link>
-          <Link href="/about" className="nav-link hover:text-yellow-500 transition duration-300">
-            About Us
-          </Link>
-          <Link href="/packages" className="nav-link hover:text-yellow-500 transition duration-300">
-            Packages
-          </Link>
-          <Link href="/destinations" className="nav-link hover:text-yellow-500 transition duration-300">
-            Destinations
-          </Link>
-          <Link href="/services" className="nav-link hover:text-yellow-500 transition duration-300">
-            Services
-          </Link>
-          <Link href="/gallery" className="nav-link hover:text-yellow-500 transition duration-300">
-            Gallery
-          </Link>
-          <Link href="/contact" className="nav-link hover:text-yellow-500 transition duration-300">
-            Contact Us
-          </Link>
+          {NAV_LINKS.map(({ href, label }) => (
+            <Link key={href} href={href} className="nav-link hover:text-yellow-500 transition duration-300">
+              {label}
+            </Link>
+          ))}
         </div>
 
-        {/* Admin Button */}
+        {/* Admin Button (desktop) */}
         <div className="hidden md:flex ml-4">
           <Link href="/admin">
             <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition duration-300">
@@ -51,45 +50,38 @@ const Navbar = ({ transparent }) => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="focus:outline-none"
-          >
-            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+        {/* Mobile hamburger */}
+        <button
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+          className="md:hidden focus:outline-none"
+        >
+          <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-white p-4 text-center space-y-4 shadow-md flex flex-col">
-          <Link href="/" onClick={() => setIsMenuOpen(false)} className="nav-link hover:text-yellow-500 transition duration-300">
-            Home
-          </Link>
-          <Link href="/about" onClick={() => setIsMenuOpen(false)} className="nav-link hover:text-yellow-500 transition duration-300">
-            About Us
-          </Link>
-          <Link href="/packages" onClick={() => setIsMenuOpen(false)} className="nav-link hover:text-yellow-500 transition duration-300">
-            Packages
-          </Link>
-          <Link href="/destinations" onClick={() => setIsMenuOpen(false)} className="nav-link hover:text-yellow-500 transition duration-300">
-            Destinations
-          </Link>
-          <Link href="/services" onClick={() => setIsMenuOpen(false)} className="nav-link hover:text-yellow-500 transition duration-300">
-            Services
-          </Link>
-          <Link href="/gallery" onClick={() => setIsMenuOpen(false)} className="nav-link hover:text-yellow-500 transition duration-300">
-            Gallery
-          </Link>
-          <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="nav-link hover:text-yellow-500 transition duration-300">
-            Contact Us
-          </Link>
+          {NAV_LINKS.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={closeMenu}
+              className="nav-link hover:text-yellow-500 transition duration-300"
+            >
+              {label}
+            </Link>
+          ))}
           <div className="mt-4">
-            <Link href="/admin">
+            <Link href="/admin" onClick={closeMenu}>
               <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition duration-300 w-full">
                 Admin Section
               </button>
