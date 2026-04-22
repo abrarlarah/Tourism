@@ -14,7 +14,7 @@ const About = () => (
     <div className="relative h-[60vh] w-full overflow-hidden">
       <Image src={img("/images/about.avif")} alt="Kashmir landscape" fill className="object-cover brightness-75" priority />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 drop-shadow-lg animate-fade-in font-montserrat uppercase">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#3D3D3D] to-yellow-600 drop-shadow-lg animate-fade-in font-montserrat uppercase">
           About Kashmir Venture
         </h1>
         <p className="max-w-3xl text-lg md:text-xl text-white leading-relaxed drop-shadow-md animate-slide-up mt-4">

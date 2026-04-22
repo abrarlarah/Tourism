@@ -28,14 +28,14 @@ const Navbar = ({ transparent = false }) => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-lg font-bold text-yellow-500 transition-transform transform hover:scale-110">
+        <Link href="/" className="text-2xl font-extrabold text-yellow-500 transition-transform transform hover:scale-105">
           Kashmir Venture
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
           {NAV_LINKS.map(({ href, label }) => (
-            <Link key={href} href={href} className="nav-link hover:text-yellow-500 transition duration-300">
+            <Link key={href} href={href} className="nav-link font-medium hover:text-yellow-500 transition duration-300">
               {label}
             </Link>
           ))}
@@ -44,7 +44,7 @@ const Navbar = ({ transparent = false }) => {
         {/* Admin Button (desktop) */}
         <div className="hidden md:flex ml-4">
           <Link href="/admin">
-            <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition duration-300">
+            <button className="bg-yellow-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-yellow-600 transition duration-300">
               Admin Section
             </button>
           </Link>
@@ -75,14 +75,14 @@ const Navbar = ({ transparent = false }) => {
               key={href}
               href={href}
               onClick={closeMenu}
-              className="nav-link hover:text-yellow-500 transition duration-300"
+              className="nav-link font-medium hover:text-yellow-500 transition duration-300"
             >
               {label}
             </Link>
           ))}
           <div className="mt-4">
             <Link href="/admin" onClick={closeMenu}>
-              <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition duration-300 w-full">
+              <button className="bg-yellow-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-yellow-600 transition duration-300 w-full">
                 Admin Section
               </button>
             </Link>

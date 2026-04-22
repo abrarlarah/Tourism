@@ -7,12 +7,12 @@ import { img } from '../utils/basePath';
 
 // Outside component — stable, never re-allocated
 const packages = [
-  { id: 1, name: 'Splendid Ladakh',          image: img('/images/ladakh.png'),      price: '$2000', days: '7 days' },
-  { id: 2, name: 'Kashmir Heaven on Earth',   image: img('/images/kashmir.png'),     price: '$1800', days: '5 days' },
-  { id: 3, name: 'Srinagar',                  image: img('/images/srinagar.png'),    price: '$2200', days: '6 days' },
-  { id: 4, name: 'Yusmarg',                   image: img('/images/yousmarg.png'),    price: '$2100', days: '5 days' },
-  { id: 5, name: 'Sonamarg',                  image: img('/images/sonamarg.png'),    price: '$2500', days: '8 days' },
-  { id: 6, name: 'Pahalgams',                 image: img('/images/pahalgam.png'),    price: '$1500', days: '4 days' },
+  { id: 1, name: 'Splendid Ladakh', image: img('/images/ladakh.png'), price: '$2000', days: '7 days' },
+  { id: 2, name: 'Kashmir Heaven on Earth', image: img('/images/kashmir.png'), price: '$1800', days: '5 days' },
+  { id: 3, name: 'Srinagar', image: img('/images/srinagar.png'), price: '$2200', days: '6 days' },
+  { id: 4, name: 'Yusmarg', image: img('/images/yousmarg.png'), price: '$2100', days: '5 days' },
+  { id: 5, name: 'Sonamarg', image: img('/images/sonamarg.png'), price: '$2500', days: '8 days' },
+  { id: 6, name: 'Pahalgams', image: img('/images/pahalgam.png'), price: '$1500', days: '4 days' },
 ];
 
 const Packages = () => {
@@ -62,9 +62,9 @@ const Packages = () => {
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col justify-center items-center bg-yellow-500 text-white p-4 md:p-6 lg:w-1/3 w-full text-center space-y-5 mx-auto my-4 lg:my-0 lg:mx-0 lg:h-auto lg:max-w-xs rounded-lg shadow-md">
-              <span className="text-2xl md:text-3xl font-bold">{pkg.price}</span>
-              <span className="text-xs">per person</span>
+            <div className="flex flex-col justify-center items-center bg-transparent text-gray-800 py-3 px-4 md:p-6 lg:w-1/3 w-full text-center space-y-2 md:space-y-5 mx-auto my-2 lg:my-0 lg:mx-0 lg:h-auto lg:max-w-xs border-t lg:border-t-0 lg:border-l border-gray-200">
+              <span className="text-xl md:text-3xl font-bold">{pkg.price}</span>
+              <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">per person</span>
               <GetQuoteButton />
             </div>
 
