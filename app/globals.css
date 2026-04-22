@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* globals.css */
+
+/*Font for Hero Section */
+.font-abril {
+  font-family: 'Abril Fatface', cursive;
+    text-transform: uppercase;
+}
+
+  .font-poppins {
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+    }
+
+
+    /*Componeny Headings*/
+.font-allura {
+  font-family: 'Allura', cursive;
+}
+
+
+.font-allura {
+  font-family: 'Allura', cursive;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  @apply bg-gray-100 text-gray-800;
+}
+
+
+/* styles/globals.css */
+.font-comforter {
+  font-family: 'Comforter Brush', cursive;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+/* Your custom global styles */
+body {
+  @apply bg-gray-100 text-gray-800;
+}
+
+/* a {
+  @apply text-blue-600 hover:text-blue-800;
+} */
+
+/* Hero Sec Text */
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 2s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 2s ease-out forwards;
+}
+
+/* globals.css  for nav section*/
+.nav-link {
+  font-size: smaller;
+  text-transform: uppercase; /* Makes text uppercase */
+  color: rgba(2, 2, 2, 0.955); /* Sets color with slight transparency */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-link:hover {
+  color: #13cece; /* Lighter gray on hover (tailwind's gray-300) */
+}
+
+/*Services Section*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/*Packages Section*/
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.4), 0 0 25px rgba(30, 144, 255, 0.3);
+}
+
+/* About Us Css*/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+.animate-slide-up {
+  animation: slideUp 2s ease-in-out;
+}
+
+
+/*Animating Component Heads*/
+/* globals.css */
+/* globals.css */
+@keyframes underline-slide {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.underline-animation {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; /* Adjust this for the distance from the text */
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
+  width: 0;
+  height: 3px;
+  background-color: #FBBF24; /* Tailwind's yellow-500 */
+  transition: width 0.4s ease-out;
+}
+
+.underline-animation:hover::after {
+  width: 25%;
+}
