@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import AdminLayout from '../../components/AdminLayout';
 import Modals from '../../components/Modals';
-import { supabase } from '../../utlis/supabaseClient';
+// import { supabase } from '../../utlis/supabaseClient';
 import Image from 'next/image';
 
 
@@ -40,7 +40,7 @@ const Packages = () => {
     }
   };
 
-  const handleSave = async (newPackage, imageFile) => {
+  const handleSave = async (newPackage) => {
     try {
       // Mock save functionality for local development
       if (newPackage.id) {
