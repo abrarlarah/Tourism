@@ -4,7 +4,7 @@ import React from 'react';
 
 const GetQuoteButton = () => {
   const handleGetQuote = () => {
-    window.open('https://wa.me/+919906512509?text=I am interested in getting a quote for your travel services.', '_blank');
+    window.open('https://wa.me/+917889400477?text=I am interested in getting a quote for your travel services.', '_blank');
   };
 
   return (
