@@ -79,10 +79,21 @@ const HeroSection = () => {
 
   return (
     // Navbar is already rendered by the root layout — NOT duplicated here
-    <div className="relative h-[70vh] w-full bg-gradient-to-r from-blue-50 to-white mt-20 pb-20">
-      <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto text-gray-800 p-6 pt-20 pb-20 z-10">
+    <div className="relative min-h-[85vh] md:min-h-[70vh] flex items-center w-full bg-gradient-to-r from-blue-50 to-white mt-20 overflow-hidden pb-12 md:pb-0">
+      {/* Background image for mobile (moved here to sit behind content) */}
+      <div className="absolute inset-0 md:hidden z-0 bg-black">
+        <Image
+          src={current.image}
+          alt={current.title}
+          fill
+          className="object-cover opacity-60"
+          priority
+        />
+      </div>
+
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto text-gray-800 p-6 pt-12 md:pt-20 pb-20 md:pb-20">
         {/* Left — Text */}
-        <div className="space-y-6 md:w-1/2 text-center md:text-left md:pr-6 bg-black bg-opacity-60 md:bg-transparent p-4 md:p-0 rounded-lg md:rounded-none">
+        <div className="space-y-6 md:w-1/2 text-center md:text-left md:pr-6 bg-black bg-opacity-60 md:bg-transparent p-8 md:p-0 rounded-2xl md:rounded-none backdrop-blur-sm md:backdrop-blur-none border border-white/10 md:border-none shadow-2xl md:shadow-none w-full">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide leading-tight font-montserrat uppercase text-white md:text-gray-800">
             {titleWords}
           </h1>
@@ -124,16 +135,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Background image for mobile */}
-      <div className="absolute inset-0 md:hidden">
-        <Image
-          src={current.image}
-          alt={current.title}
-          fill
-          className="object-cover opacity-70"
-          priority
-        />
-      </div>
 
       {/* Navigation Arrows */}
       <div className="absolute inset-0 flex justify-between items-center px-6">
